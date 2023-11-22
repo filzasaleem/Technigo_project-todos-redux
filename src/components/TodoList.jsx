@@ -5,7 +5,6 @@ import "./TodoList.css";
 export const TodoList = () => {
   const taskList = useSelector((state) => state.tasks.tasksList);
 
-
   if (taskList) {
     console.log(taskList);
   }
@@ -18,9 +17,9 @@ export const TodoList = () => {
 
   return (
     <main>
-      <section>
-<p>Number of tasks: {taskList.length}</p>
-<p>Incomplet tasks: {incompleteTasks}</p>
+      <section className="taskCount">
+        <p>Number of tasks: {taskList.length}</p>
+        <p>Incomplet tasks: {incompleteTasks}</p>
       </section>
       <section className="todoList">
         {taskList?.map((task) => (
