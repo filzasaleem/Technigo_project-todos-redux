@@ -1,0 +1,74 @@
+.todoCard {
+  background-color: var(--pure-white);
+  /* border: 1px solid var(--softest-main); */
+  min-width: 350px;
+  flex: 1;
+  /* box-shadow: 10px 1px 2px var(--softest-main); */
+  border-right: 2px solid var(--softest-main);
+  border-bottom: 2px solid var(--softest-main);
+}
+
+.todoCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--soft-main);
+  padding: 0.5rem 1rem;
+}
+
+.todoCardHeader svg {
+  height: 1.5rem;
+  width: auto;
+  fill: var(--softest-main);
+}
+
+.todoCardName {
+  font-weight: 500;
+}
+
+.todoCardIsDone {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.todoCardComment {
+  padding: 0.5rem 1rem;
+}
+
+.todoCardInfo {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.todoCardDateInfo span:first-child {
+  margin-right: 0.5rem;
+}
+
+.todoCardRemove {
+  cursor: pointer;
+}
+.todoCardRemove svg {
+  height: 1.5rem;
+}
+
+@media screen and (min-width: 796px) {
+  .todoCard:last-of-type {
+    max-width: calc(50% - 1rem);
+  }
+
+  .todoCard:first-of-type {
+    max-width: calc(50% - 1rem);
+  }
+}
+
+@media screen and (min-width: 1178px) {
+  .todoCard:last-of-type {
+    max-width: calc(33% - 1rem);
+  }
+
+  .todoCard:first-of-type {
+    max-width: calc(33% - 1rem);
+  }
+}

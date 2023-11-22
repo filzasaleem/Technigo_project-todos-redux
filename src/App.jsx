@@ -1,7 +1,7 @@
 // Example from instructions pasted below
 
-import { useSelector } from "react-redux";
-
+import { Provider } from "react-redux";
+import store from "./store";
 import { tasks } from "./reducers/tasksSlice";
 import { TodoList } from "./components/TodoList";
 import { AddTask } from "./components/AddTask";
