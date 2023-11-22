@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
-import { Category } from './Category';
+import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { Category } from "./Category";
+import { useDispatch } from "react-redux";
+import { addTask } from "../reducers/tasksSlice";
 
 export const AddTask = () => {
-  const [task, setTask] = useState('');
-  const [comment, setComment] = useState('');
+  const [task, setTask] = useState("");
+  const [comment, setComment] = useState("");
   const [deadline, setDeadline] = useState(new Date());
-  const [category, setCategory] = useState('');
+  const [category, setCategory] = useState("");
+  const dispatch = useDispatch();
 
   const selectCategory = (value) => {
     setCategory(value);
@@ -16,8 +19,16 @@ export const AddTask = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-  //todo dispatch form.
+    dispatch(
+      addTask({
+        createdDate: new Date().getTime(),
+        name: task,
+        comment: comment,
+        deadline: deadline.getTime(),
+        category: category,
+        isDone: false,
+      })
+    );
   };
 
   return (
@@ -50,7 +61,7 @@ export const AddTask = () => {
 
       <Category value={category} setSelectedCategory={selectCategory} />
 
-      <button type="submit">Submit</button>
+      <button type="submit">create task</button>
     </form>
   );
 };

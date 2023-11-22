@@ -42,5 +42,12 @@ const initialState = {
 export const tasks = createSlice({
   name: "tasks",
   initialState,
-  reducer: {},
+  reducers: {
+    addTask: (state, action) => {
+      console.log("task in reducer",action.payload);
+      state.tasksList.push(action.payload);
+    },
+  },
 });
+
+export const {addTask} = tasks.actions;
