@@ -1,6 +1,6 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { tasks } from "./reducers/tasksSlice";
-import modelReducer from "./reducers/modelSlice"
+import modelReducer from "./reducers/modelSlice";
 
 const reducer = combineReducers({
   tasks: tasks.reducer,
