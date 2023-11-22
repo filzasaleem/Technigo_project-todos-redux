@@ -30,8 +30,13 @@ export const AddTask = () => {
       })
     );
   };
+  const handleClick = () => {
+    dispatch(closeModal());
+  }
 
   return (
+    <>
+    <button onClick={handleClick}>X</button>
     <form onSubmit={handleSubmit}>
       <label htmlFor="task">Task:</label>
       <input
@@ -61,7 +66,9 @@ export const AddTask = () => {
 
       <Category value={category} setSelectedCategory={selectCategory} />
 
-      <button type="submit">create task</button>
+      <button type="submit">Save</button>
     </form>
+    </>
+    
   );
 };
