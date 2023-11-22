@@ -8,7 +8,7 @@ const initialState = {
       name: "Watch video on actions & reducers",
       comment: "Do it properly",
       deadline: "",
-      category: "Fun",
+      category: "house",
       isDone: true,
     },
     {
@@ -16,7 +16,7 @@ const initialState = {
       name: "Follow redux code along",
       comment: "Do it properly",
       deadline: "",
-      category: "Fun",
+      category: "garden",
       isDone: false,
     },
     {
@@ -24,7 +24,7 @@ const initialState = {
       name: "Fork weekly assignment",
       comment: "Do it properly",
       deadline: "",
-      category: "Fun",
+      category: "bill",
       isDone: true,
     },
     {
@@ -32,7 +32,7 @@ const initialState = {
       name: "Create a todo app",
       comment: "Do it properly",
       deadline: "",
-      category: "Fun",
+      category: "shop",
       isDone: false,
     },
   ],
@@ -42,5 +42,12 @@ const initialState = {
 export const tasks = createSlice({
   name: "tasks",
   initialState,
-  reducer: {},
+  reducers: {
+    removeTask: (state, { payload }) => {
+      const filteredList = state.tasksList.filter(
+        (task) => task.createdDate !== payload
+      );
+      state.tasksList = filteredList;
+    },
+  },
 });
