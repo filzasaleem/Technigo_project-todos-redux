@@ -53,6 +53,13 @@ export const tasks = createSlice({
       );
       state.tasksList = filteredList;
     },
+    handleIsDone: (state, { payload }) => {
+      const task = state.tasksList.find((task) => task.createdDate === payload);
+      if (task) {
+        task.isDone = !task.isDone;
+      }
+      //console.log(task);
+    },
   },
 });
 
