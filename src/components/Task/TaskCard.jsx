@@ -43,34 +43,42 @@ export const TaskCard = ({
     }
   };
 
- const handleRemove = () => {
-  if(projectId == undefined)
-    dispatch(tasks.actions.removeTask(createdDate));
-  else 
-  dispatch(projects.actions.removeProjectTask({projectId: projectId,taskId:createdDate}));
-
- }
-
+  const handleRemove = () => {
+    if (projectId == undefined) dispatch(tasks.actions.removeTask(createdDate));
+    else
+      dispatch(
+        projects.actions.removeProjectTask({
+          projectId: projectId,
+          taskId: createdDate,
+        })
+      );
+  };
+  const handleCkeckBox = () => {
+    if (projectId == undefined) {
+      dispatch(tasks.actions.handleIsDone(createdDate));
+    } else {
+      dispatch(
+        projects.actions.projectTaskIsDone({
+          projectId: projectId,
+          taskId: createdDate,
+        })
+      );
+    }
+  };
 
   return (
     <div className="todoCard">
       <div className="todoCardHeader">
         {getCategory(category)}
         <span className="todoCardName">{name}</span>
-        <span
-          className="todoCardIsDone"
-          onClick={() => dispatch(tasks.actions.handleIsDone(createdDate))}
-        >
+        <span className="todoCardIsDone" onClick={() => handleCkeckBox()}>
           {isDone ? <IconCheck /> : <IconUnCheck />}
         </span>
       </div>
       <div className="todoCardComment">{comment}</div>
       <div className="todoCardInfo">
         <div>
-          <span
-            onClick={() => handleRemove()}
-            className="todoCardRemove"
-          >
+          <span onClick={() => handleRemove()} className="todoCardRemove">
             <IconTrash />
           </span>
         </div>

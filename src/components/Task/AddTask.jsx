@@ -2,36 +2,54 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Category } from "./Category";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addTask } from "../../reducers/tasksSlice";
 import { closeModal } from "../../reducers/modelSlice";
+import { addProjectTask, projects } from "../../reducers/projectSlice";
 import "./AddTask.css";
+
 
 export const AddTask = () => {
   const [task, setTask] = useState("");
   const [comment, setComment] = useState("");
   const [deadline, setDeadline] = useState(new Date());
   const [category, setCategory] = useState("");
+  const addProjTask = useSelector((state) => state.projects.addProjectTasks);
+
   const dispatch = useDispatch();
 
   const selectCategory = (value) => {
     setCategory(value);
     console.log("category selected");
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(
-      addTask({
-        createdDate: new Date().getTime(),
-        name: task,
-        comment: comment,
-        deadline: deadline.getTime(),
-        category: category,
-        isDone: false,
-      })
-    );
-    dispatch(closeModal());
+
+    if (addProjTask) {
+      dispatch(
+        addProjectTask({
+          createdDate: new Date().getTime(),
+          name: task,
+          comment: comment,
+          deadline: deadline.getTime(),
+          category: category,
+          isDone: false,
+        })
+      );
+      dispatch(closeModal());
+    } else {
+      dispatch(
+        addTask({
+          createdDate: new Date().getTime(),
+          name: task,
+          comment: comment,
+          deadline: deadline.getTime(),
+          category: category,
+          isDone: false,
+        })
+      );
+      dispatch(closeModal());
+    }
   };
   const handleClick = () => {
     dispatch(closeModal());

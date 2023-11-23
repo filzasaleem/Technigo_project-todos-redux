@@ -2,7 +2,7 @@ import React from "react";
 import "./Header.css";
 import { useDispatch } from "react-redux";
 
-import { openModal } from "../reducers/modelSlice";
+import { openModal, openProjectModal } from "../reducers/modelSlice";
 
 export const Header = () => {
   const dispatch = useDispatch();
@@ -13,7 +13,7 @@ export const Header = () => {
         <h1 className="text-big">TODO APP</h1>
       </div>
       <div className="button">
-      <button onClick={() => dispatch()} className="addProject">ADD Project</button>
+      <button onClick={() => dispatch(openProjectModal())} className="addProject">ADD Project</button>
         <button onClick={() => dispatch(openModal())} className="addTask">ADD TASK</button>
        
       </div>
