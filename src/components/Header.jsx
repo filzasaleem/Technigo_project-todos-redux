@@ -12,7 +12,7 @@ export const Header = () => {
         <i className="glyphicon glyphicon-menu-hamburger text-big"></i>
         <h1 className="text-big">TODO APP</h1>
       </div>
-      <div className="buttons">
+      <div className="button">
       <button onClick={() => dispatch()} className="addProject">ADD Project</button>
         <button onClick={() => dispatch(openModal())} className="addTask">ADD TASK</button>
        

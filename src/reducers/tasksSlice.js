@@ -36,6 +36,7 @@ const initialState = {
       isDone: false,
     },
   ],
+  
   menuActive: false,
 };
 

@@ -3,8 +3,8 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Category } from "./Category";
 import { useDispatch } from "react-redux";
-import { addTask } from "../reducers/tasksSlice";
-import { closeModal } from "../reducers/modelSlice";
+import { addTask } from "../../reducers/tasksSlice";
+import { closeModal } from "../../reducers/modelSlice";
 import "./AddTask.css";
 
 export const AddTask = () => {

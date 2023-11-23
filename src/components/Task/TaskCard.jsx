@@ -1,12 +1,13 @@
-import { IconTrash } from "../assets/icons2";
-import { IconHouse } from "../assets/icons2";
-import { IconBill } from "../assets/icons2";
-import { IconShop } from "../assets/icons2";
-import { IconOther } from "../assets/icons2";
-import { IconGarden } from "../assets/icons2";
-import { IconCheck } from "../assets/icons2";
-import { IconUnCheck } from "../assets/icons2";
-import { tasks } from "../reducers/tasksSlice";
+import { IconTrash } from "../../assets/icons2";
+import { IconHouse } from "../../assets/icons2";
+import { IconBill } from "../../assets/icons2";
+import { IconShop } from "../../assets/icons2";
+import { IconOther } from "../../assets/icons2";
+import { IconGarden } from "../../assets/icons2";
+import { IconCheck } from "../../assets/icons2";
+import { IconUnCheck } from "../../assets/icons2";
+import { tasks } from "../../reducers/tasksSlice";
+import { projects } from "../../reducers/projectSlice";
 import "./TaskCard.css";
 
 import { useSelector } from "react-redux";
@@ -19,6 +20,7 @@ export const TaskCard = ({
   category,
   isDone,
   deadline,
+  projectId,
 }) => {
   const dispatch = useDispatch();
   const taskList = useSelector((state) => state.tasks.tasksList);
@@ -41,6 +43,15 @@ export const TaskCard = ({
     }
   };
 
+ const handleRemove = () => {
+  if(projectId == undefined)
+    dispatch(tasks.actions.removeTask(createdDate));
+  else 
+  dispatch(projects.actions.removeProjectTask({projectId: projectId,taskId:createdDate}));
+
+ }
+
+
   return (
     <div className="todoCard">
       <div className="todoCardHeader">
@@ -57,7 +68,7 @@ export const TaskCard = ({
       <div className="todoCardInfo">
         <div>
           <span
-            onClick={() => dispatch(tasks.actions.removeTask(createdDate))}
+            onClick={() => handleRemove()}
             className="todoCardRemove"
           >
             <IconTrash />
