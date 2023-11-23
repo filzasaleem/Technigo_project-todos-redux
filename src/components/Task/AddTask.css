@@ -38,7 +38,7 @@
     padding-bottom: 0.5rem;
     padding-left: 5px;
     padding-right: 5px; */
-    padding: 0.5rem 5px 0.5rem 5px;
+    padding: 1rem 
 
 }
 
@@ -48,13 +48,11 @@ input {
 }
 
 .submitButton{
-     width: 100px; /* Adjust the width as needed */
-      height: 30px; /* Adjust the height as needed */
+     width: 100px; 
+      height: 30px; 
       background-color:var(--softest-main);
       border: none;
-      
-      
-      border-radius: 15px; /* Half of the height for an oval shape */
+      border-radius: 15px; 
       cursor: pointer;
      
 
@@ -63,5 +61,5 @@ input {
     display: flex;
     flex-direction: row;
     justify-content:space-between;
-    padding: 0.5rem;
+    padding: 1rem;
 }

@@ -1,0 +1,9 @@
+.projectList{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1;
+    gap: 2rem;
+    padding: 2rem;
+      
+}

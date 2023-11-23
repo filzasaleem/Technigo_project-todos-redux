@@ -1,0 +1,44 @@
+.projectCard{
+    background-color: var(--pure-white);
+    /* border: 1px solid var(--softest-main); */
+    min-width: 450px;
+    flex: 1;
+    /* box-shadow: 10px 1px 2px var(--softest-main); */
+    border-right: 2px solid var(--softest-main);
+    border-bottom: 2px solid var(--softest-main);
+     display: flex;
+    flex-direction: column;
+    /*border: solid red; */
+
+   
+
+}
+.projectsTasks,.todoCardRemove{
+    padding-left: 1rem;
+
+}
+
+.projectCardHeader{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--soft-main);
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+
+}
+.projectCardHeader svg{
+    height: 1.5rem;
+    width: auto;
+    fill: var(--softest-main);
+
+}
+.projectCardName{
+    font-weight: 600;
+
+}
+.projectCardIsDone{
+    margin-left: auto;
+  cursor: pointer;
+
+}

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addProject } from "../../reducers/projectSlice";
 import { closeProjectModal } from "../../reducers/modelSlice";
+import "./AddProject.css"
 
 export const AddProject = () => {
   const [projectName, setTask] = useState("");
@@ -20,8 +21,19 @@ export const AddProject = () => {
     dispatch(closeProjectModal());
   };
 
+  const handleClick = () => {
+    dispatch(closeProjectModal());
+  };
   return (
-    <div>
+    <div className="addProjectContainer">
+      <div className="addProject">
+      <div className="addProjectHeader">
+          <h3>Add Project</h3>
+          <button onClick={handleClick} className="close">
+            X
+          </button>
+        </div>
+        <div className="addTaskForm">
       <form onSubmit={handleProjectSubmit}>
         <div className="projectName">
           <label htmlFor="project">Project Name:</label>
@@ -37,6 +49,8 @@ export const AddProject = () => {
           Create
         </button>
       </form>
+      </div>
+      </div>
     </div>
   );
 };

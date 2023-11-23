@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { TaskCard } from "./TaskCard";
-import { IconFilter } from "../assets/icons2";
+import { IconFilter } from "../../assets/icons2";
 import "./TodoList.css";
 import { useEffect, useState } from "react";
 

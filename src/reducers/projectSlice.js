@@ -1,4 +1,3 @@
-
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   projectList: [
@@ -114,7 +113,6 @@ export const projects = createSlice({
       state.projectList = filteredList;
     },
     addProjectTask: (state, action) => {
-     
       if (state.projectId !== undefined) {
         console.log("inside iffffff");
         state.projectList = state.projectList.map((project) => {
@@ -124,7 +122,7 @@ export const projects = createSlice({
               tasks: [...project.tasks, action.payload],
             };
           }
-          console.log("returining project",project);
+          console.log("returining project", project);
           return project;
         });
         state.projectId = undefined;
@@ -135,24 +133,34 @@ export const projects = createSlice({
     setAddProjectTask: (state, action) => {
       state.addProjectTasks = true;
       state.projectId = action.payload.projectId;
-  
     },
-    projectTaskIsDone : (state,action) => {
-
-      const {projectId, taskId } = action.payload;
-      console.log("cheing in reducer",action.payload);
-
-      const project = state.projectList.find((proj) => proj.createdDate === projectId);
-      if(project){
+    projectTaskIsDone: (state, action) => {
+      const { projectId, taskId } = action.payload;
+      const project = state.projectList.find(
+        (proj) => proj.createdDate === projectId
+      );
+      if (project) {
         const task = project.tasks.find((task) => task.createdDate === taskId);
         if (task) {
           task.isDone = !task.isDone;
         }
+        const allTasksDone = project.tasks.every((task) => task.isDone);
 
+        project.isDone = allTasksDone;
+      }
+    },
+    projectIsDone: (state, action) => {
+      const project = state.projectList.find(
+        (proj) => proj.createdDate === action.payload
+      );
+      if (project) {
+        project.tasks.map((task) => {
+          task.isDone = !task.isDone;
+        });
+        project.isDone = !project.isDone;
       }
     },
 
-    
     removeProjectTask: (state, action) => {
       const { projectId, taskId } = action.payload;
 
@@ -179,4 +187,5 @@ export const {
   addProjectTask,
   setAddProjectTask,
   projectTaskIsDone,
+  projectIsDone,
 } = projects.actions;
