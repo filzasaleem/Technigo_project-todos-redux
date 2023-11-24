@@ -1,5 +1,7 @@
 # Technigo React Starter App
 
+A project by Filza Saleem, Sebastian Tigerschiöld, Diana Undén
+
 ## Usage
 
 1. Fork and clone this repository to your computer
