@@ -60,7 +60,13 @@ export const tasks = createSlice({
       }
       //console.log(task);
     },
+    completeAllTasks: (state) =>{
+      state.tasksList.map((task)=>{
+        task.isDone = true;
+      })
+
+    },
   },
 });
 
-export const { addTask, removeTask, handleIsDone } = tasks.actions;
+export const { addTask, removeTask, handleIsDone,completeAllTasks } = tasks.actions;
