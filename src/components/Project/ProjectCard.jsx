@@ -3,9 +3,13 @@ import { IconCheck } from "../../assets/icons2";
 import { IconUnCheck } from "../../assets/icons2";
 import { IconTrash } from "../../assets/icons2";
 import { TaskCard } from "../Task/TaskCard";
-import { projectIsDone, removeProject, setAddProjectTask } from "../../reducers/projectSlice";
+import {
+  projectIsDone,
+  removeProject,
+  setAddProjectTask,
+} from "../../reducers/projectSlice";
 import { openModal } from "../../reducers/modelSlice";
-import "./ProjectCard.css"
+import "./ProjectCard.css";
 
 export const ProjectCard = ({ project }) => {
   const dispatch = useDispatch();
@@ -17,8 +21,7 @@ export const ProjectCard = ({ project }) => {
   };
 
   const handleCkeckBox = () => {
-    dispatch(projectIsDone(project.createdDate))
-
+    dispatch(projectIsDone(project.createdDate));
   };
   return (
     <div className="projectCard">
@@ -29,29 +32,28 @@ export const ProjectCard = ({ project }) => {
         </span>
       </div>
       <div className="projectsTasks">
-      {project.tasks?.map((task) => (
-        <TaskCard
-          createdDate={task.createdDate}
-          name={task.name}
-          comment={task.comment}
-          category={task.category}
-          isDone={task.isDone}
-          deadline={task.deadline}
-          key={task.createdDate}
-          projectId={project.createdDate}
-        />
-        
-      ))}
+        {project.tasks?.map((task) => (
+          <TaskCard
+            createdDate={task.createdDate}
+            name={task.name}
+            comment={task.comment}
+            category={task.category}
+            isDone={task.isDone}
+            deadline={task.deadline}
+            key={task.createdDate}
+            projectId={project.createdDate}
+          />
+        ))}
       </div>
-      <div >
-        <span
+      <div className="projectCardFooter">
+        <div
           onClick={() => dispatch(removeProject(project.createdDate))}
           className="todoCardRemove"
         >
-            <IconTrash />
-        </span>
+          <IconTrash />
+        </div>
+        <button onClick={handleAddTask}>Add Task</button>
       </div>
-      <button onClick={handleAddTask}>Add Task</button>
     </div>
   );
 };

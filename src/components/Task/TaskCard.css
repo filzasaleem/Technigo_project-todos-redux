@@ -1,11 +1,12 @@
-.todoCard {
+.todoList .todoCard {
   background-color: var(--pure-white);
   /* border: 1px solid var(--softest-main); */
   min-width: 350px;
-  flex: 1;
+  /* flex: 1; */
   /* box-shadow: 10px 1px 2px var(--softest-main); */
-  border-right: 2px solid var(--softest-main);
-  border-bottom: 2px solid var(--softest-main);
+  /* border-right: 2px solid var(--softest-main);
+  border-bottom: 2px solid var(--softest-main); */
+  box-shadow: 0px 0px 1px var(--dark-purple);
 }
 
 .todoCardHeader {
@@ -19,7 +20,7 @@
 .todoCardHeader svg {
   height: 1.5rem;
   width: auto;
-  fill: var(--softest-main);
+  fill: var(--dark-purple);
 }
 
 .todoCardName {
@@ -47,20 +48,25 @@
 }
 
 .todoCardRemove {
+  display: flex;
   cursor: pointer;
 }
 .todoCardRemove svg {
   height: 1.5rem;
 }
 .passed-deadline {
-  color: red;
+  color: #d1423f;
 }
 .deadline-not-passed {
   color: green;
 }
-
-@media screen and (min-width: 796px) {
+@media screen and (max-width: 796px) {
   .todoCard {
+    flex: 1;
+  }
+}
+@media screen and (min-width: 796px) {
+  .taskList .todoCard {
     max-width: calc(50% - 1rem);
   }
 
@@ -70,7 +76,7 @@
 }
 
 @media screen and (min-width: 1178px) {
-  .todoCard {
+  .taskList .todoCard {
     max-width: calc(33% - 1rem);
   }
 
