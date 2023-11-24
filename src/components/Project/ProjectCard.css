@@ -1,44 +1,58 @@
-.projectCard{
-    background-color: var(--pure-white);
-    /* border: 1px solid var(--softest-main); */
-    min-width: 450px;
-    flex: 1;
-    /* box-shadow: 10px 1px 2px var(--softest-main); */
-    border-right: 2px solid var(--softest-main);
-    border-bottom: 2px solid var(--softest-main);
-     display: flex;
-    flex-direction: column;
-    /*border: solid red; */
-
-   
-
+.projectCard {
+  /* background-color: var(--light-green); */
+  /* border: 1px solid var(--softest-main); */
+  min-width: 450px;
+  flex: 1;
+  /* box-shadow: 10px 1px 2px var(--softest-main); */
+  /* border-right: 2px solid var(--softest-main);
+  border-bottom: 2px solid var(--softest-main); */
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid var(--dark-purple);
+   */
+  box-shadow: 0px 0px 1px var(--dark-purple);
 }
-.projectsTasks,.todoCardRemove{
-    padding-left: 1rem;
+.projectsTasks {
+  padding: 1rem;
+}
+/* .projectsTasks,
+.todoCardRemove {
+  padding-left: 1rem;
+} */
 
+.projectsTasks .todoCard {
+  background-color: var(--pure-white);
+  max-width: 100%;
+  box-shadow: 0px 0px 1px var(--dark-purple);
+
+  margin-bottom: 1rem;
+  /* border-right: 2px solid var(--softest-main);
+  border-bottom: 2px solid var(--softest-main); */
 }
 
-.projectCardHeader{
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background-color: var(--soft-main);
-    padding: 0.5rem 1rem;
-    margin-bottom: 1rem;
-
+.projectCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--soft-main);
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
 }
-.projectCardHeader svg{
-    height: 1.5rem;
-    width: auto;
-    fill: var(--softest-main);
-
+.projectCardHeader svg {
+  height: 1.5rem;
+  width: auto;
+  fill: var(--dark-purple);
 }
-.projectCardName{
-    font-weight: 600;
-
+.projectCardName {
+  font-weight: 600;
 }
-.projectCardIsDone{
-    margin-left: auto;
+.projectCardIsDone {
+  margin-left: auto;
   cursor: pointer;
-
+}
+.projectCardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
 }
