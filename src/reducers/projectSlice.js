@@ -114,7 +114,6 @@ export const projects = createSlice({
     },
     addProjectTask: (state, action) => {
       if (state.projectId !== undefined) {
-        console.log("inside iffffff");
         state.projectList = state.projectList.map((project) => {
           if (project.createdDate === state.projectId) {
             return {
@@ -122,7 +121,6 @@ export const projects = createSlice({
               tasks: [...project.tasks, action.payload],
             };
           }
-          console.log("returining project", project);
           return project;
         });
         state.projectId = undefined;
