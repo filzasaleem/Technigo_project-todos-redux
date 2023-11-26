@@ -1,6 +1,6 @@
-# Technigo React Starter App
+# To Do Web App in React with Redux
 
-A project by Filza Saleem, Sebastian Tigerschiöld, Diana Undén
+A project by Filza Saleem, Diana Undén and Sebastian Tigerschiöld
 
 ## Usage
 
@@ -10,13 +10,15 @@ A project by Filza Saleem, Sebastian Tigerschiöld, Diana Undén
 
 # Project Todos
 
-Replace this readme with your own information about your project.
+We started out by setting up a Trello board for all of the goals for this week. We made a quick mockup och the design in Figma, decided on which components to use as well the structure of our global state.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+After that we split up the basic requirement task between ourselves and finsihed them, focusing on mostly function and not spending too much time on design.
+
+After the basic requirements were done, we assessed the stretch goals for this project and divided them between us. Then we met up again at the end of the week and went through the app and finsihed up the design together.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+We had a pretty ambitious time table  for the project and we did have to omit a few of the stretch goals in order to finsih on time. We were happy with what we accomplished in a relatively short time but had we had more time, we would have implemented styled components (which was one of the stretch goals). The CSS ended up a little messy in the end and highlights the need to manage styling in a less confusing way.
 
 ## View it live
 https://gilded-swan-627c20.netlify.app/
