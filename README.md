@@ -29,4 +29,5 @@ We had a pretty ambitious time table  for the project and we did have to omit a 
 React redux is used in this project. All the reducers are written by the gropu members.
 
 ## View it live
-https://gilded-swan-627c20.netlify.app/
+https://filzas-todo-app.netlify.app/ (my own deployed site)
+https://gilded-swan-627c20.netlify.app/  (with gropu)
