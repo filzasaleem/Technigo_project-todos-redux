@@ -2,6 +2,12 @@
 
 A project by Filza Saleem, Diana Undén and Sebastian Tigerschiöld
 
+
+## View it live
+[Filza's todo-app](https://filzas-todo-app.netlify.app/) (individual deployment)
+[group todo-app](https://gilded-swan-627c20.netlify.app/)  (group deployment)
+
+
 ## Usage
 
 1. Fork and clone this repository to your computer
@@ -27,7 +33,3 @@ We had a pretty ambitious time table  for the project and we did have to omit a 
 
 ## Technologies used for solution
 React redux is used in this project. All the reducers are written by the gropu members.
-
-## View it live
-[Filza's todo-app](https://filzas-todo-app.netlify.app/) (individual deployment)
-[group todo-app](https://gilded-swan-627c20.netlify.app/)  (group deployment)
