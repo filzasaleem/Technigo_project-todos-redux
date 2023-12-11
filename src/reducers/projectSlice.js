@@ -167,10 +167,17 @@ export const projects = createSlice({
         (proj) => proj.createdDate === action.payload
       );
       if (project) {
+        if(project.isDone === false){
         project.tasks.map((task) => {
-          task.isDone = !task.isDone;
+          task.isDone = true;
         });
-        project.isDone = !project.isDone;
+        project.isDone = true;
+      }else{
+        project.tasks.map((task) => {
+          task.isDone = false;
+        });
+        project.isDone = false;
+      }
       }
     },
 
